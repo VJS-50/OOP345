@@ -1,0 +1,26 @@
+Vincent Yu		112708193		Workshop 3
+
+After finishing this workshop, I've learned how to use templates by implementing the Set and Pair classes and 
+function specializations by creating the specialization for the += operator.
+
+What had caused the most difficulty for completing the workshop would be with 
+initializing the static variables for the PairSummable class.
+When I was working on part 2, the static members kept giving me linking errors.
+Which I found could be solved by adding the inline keyword to be declaration.
+Also, finding what both members were supposed to be set to, because the instructions
+were vague with regards to what the width was supposed to get it's value from, and to what initial was supposed to be.
+
+The reason why the += operator required specialization is because the operator isn't 
+meant to be used for strings. If a value of type string were to be passed to the operator, it would probably 
+throw an error. A numerical value being passed to the operator would work just fine however.
+
+The variables of the PairSummable class had to be defined outside of the class definition is because
+the variables are static. Static variables must have only one point of definition in a linked unit.
+
+Templates are defined in the header files because the compiler requires the definition of
+the templates in order to instantiate the functions and classes that utilize them.
+Without the definitions, the compiler wouldn't be able to instantiate them.
+
+The '=initial' in the prototype of the PairSummable constructor is for when that specific value 
+is not provided during instantiation of an object. Since the default type is ambiguous,
+initial stores the equivalent of zero for that type.

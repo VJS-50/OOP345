@@ -1,0 +1,20 @@
+Vincent Yu		1127 01893		Workshop 1
+
+In this workshop, I have learned about utilizing variables from other translation units, how to use program arguments, 
+and how to use variables that persist throughout the lifetime of a program. 
+
+The difference between external and internal linkage is that external linkage has to do with 
+variables, functions and templates that are declared in one translation unit that are accessible 
+by other translation units. An example of external linkage would be the global variable g_sysClock.
+The variable is used by the w1 module and the Event module, which are in different translation units.
+
+Internal linkage refers to variables, functions and templates that can only be accessed by a scope
+within it's own translation unit. An exmaple would be the static variable noOfCalls, which is used to count
+the total times that the display() function has been called. The variable remains in the program's memory after the function ends.
+If noOfCalls were to be used in the scope of w1, the variable used in the w1 scope would have a different value than the variable 
+used in the Event scope. 
+
+When upgrading the Event class from part 1 into part 2, the character array c_desc was changed into a pointer that has memory dynamically
+allocated for the string to be stored in and allowed for the string to be of any length, removing the 128 character limit that the part 1 class had.
+A destructor was also implemented to delete the contents of c_desc to prevent any memory leaks. I have also implemented a copy constructor 
+and an overload for the copy assignment operator that both do a deep copy in order to archive the events without causing problems.
